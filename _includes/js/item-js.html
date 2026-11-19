@@ -31,6 +31,8 @@ function displayItem(record, prev_id, next_id, compound_object) {
     /* add item title */
     var objectTitle = record.title;
     document.getElementById("bc-title").innerHTML = objectTitle;
+    /* name the browser tab after the artwork, so tabs, bookmarks, and screen readers don't all say "Collection Item" */
+    document.title = objectTitle + {{ site.title | strip | prepend: " | " | jsonify }};
 
     /* get item format for item title */
     var itemFormat;
